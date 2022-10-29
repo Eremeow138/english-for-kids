@@ -14,7 +14,7 @@ export function authenticateJWT(
     const token = authHeader.split(' ')[1];
 
     jwt.verify(token, accessTokenSecret, (err, user) => {
-      if (err || !(user && user.role)) {
+      if (err || !(user && user?.role)) {
         return res.sendStatus(403);
       }
       next();
