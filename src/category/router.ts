@@ -8,7 +8,6 @@ import {
   updateCategory,
 } from './repository';
 import { Category } from './category';
-import { authenticateJWT } from '../authentication';
 
 const router = Router();
 
@@ -57,7 +56,7 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-router.put('/', authenticateJWT, async (req, res) => {
+router.put('/', async (req, res) => {
   const category = req.body as Category;
   try {
     const freshCategory = await updateCategory(category);

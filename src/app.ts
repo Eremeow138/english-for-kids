@@ -23,4 +23,4 @@ app.use('/api/statistics', statistics);
 
 app.use('/api/login', users);
 
-app.listen(3000, () => console.log('Server started on '));
+app.listen(3000, () => console.log('Server started on http://localhost:3000'));
